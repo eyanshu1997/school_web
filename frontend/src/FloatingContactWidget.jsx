@@ -18,8 +18,8 @@ export default function FloatingContactWidget() {
           </a>
         </div>
       ) : (
-        <button className="btn btn-success rounded-circle shadow-lg" style={{width:56,height:56}} onClick={()=>setShowWidget(true)} aria-label="Open contact widget">
-          {/* Only green circle, no icon */}
+        <button className="btn btn-success rounded-circle shadow-lg d-flex align-items-center justify-content-center" style={{width:56,height:56, fontSize: '1.5rem'}} onClick={()=>setShowWidget(true)} aria-label="Open contact widget">
+          <i className="bi bi-telephone-fill" style={{color:'#fff'}}></i>
         </button>
       )}
     </div>
