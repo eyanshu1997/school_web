@@ -1,0 +1,139 @@
+
+import React, { useState, useEffect } from "react";
+
+const images = [
+  "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=600&q=80"
+];
+
+export default function Home() {
+  const [current, setCurrent] = useState(0);
+  const [showWidget, setShowWidget] = useState(false);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="container py-5 position-relative" style={{background: 'linear-gradient(135deg, #e3f0ff 0%, #ffffff 100%)'}}>
+      <div className="bg-white rounded-4 shadow p-4 mb-5 border border-2 border-primary-subtle">
+        {/* Slideshow */}
+        <div className="row justify-content-center mb-4">
+          <div className="col-12 col-md-8">
+            <div className="position-relative rounded-4 overflow-hidden shadow border border-primary" style={{height:'300px', background:'#e3f0ff'}}>
+              <img
+                src={images[current]}
+                alt="School Slideshow"
+                className="w-100 h-100 object-fit-cover transition"
+                style={{objectFit:'cover',height:'300px', filter:'brightness(0.95)'}}
+              />
+              <div className="position-absolute bottom-0 start-50 translate-middle-x d-flex gap-2 pb-2">
+                {images.map((_, idx) => (
+                  <span
+                    key={idx}
+                    className={`d-inline-block rounded-circle ${idx === current ? 'bg-primary' : 'bg-secondary'} opacity-75`} style={{width:12,height:12, border: '2px solid #fff'}}>
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Welcome Section */}
+        <h2 className="h2 fw-bold mb-3 text-primary text-center">A Place to Learn, Grow, and Shine</h2>
+        <p className="lead text-secondary mb-4 text-center">
+          At <span className="fw-semibold text-primary">SVS Playway & Primary School</span>, we believe in holistic education that nurtures every aspect of a child's development. Our experienced teachers, modern facilities, and engaging curriculum ensure that students are inspired to reach their full potential.
+        </p>
+
+        {/* Features */}
+        <div className="row mb-4 g-3">
+          <div className="col-md-4">
+            <div className="rounded-3 p-3 h-100 shadow-sm" style={{background:'#eafaf1', borderTop:'4px solid #27ae60'}}>
+              <h4 className="h6 fw-bold mb-2" style={{color:'#27ae60'}}>Play-based Learning</h4>
+              <p className="mb-0">Fun, interactive activities for early years to spark curiosity and creativity.</p>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="rounded-3 p-3 h-100 shadow-sm" style={{background:'#fff6e3', borderTop:'4px solid #f39c12'}}>
+              <h4 className="h6 fw-bold mb-2" style={{color:'#f39c12'}}>All-round Development</h4>
+              <p className="mb-0 text-secondary">Focus on academics, sports, arts, and life skills for balanced growth.</p>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="rounded-3 p-3 h-100 shadow-sm" style={{background:'#f5e6fa', borderTop:'4px solid #8e44ad'}}>
+              <h4 className="h6 fw-bold mb-2" style={{color:'#8e44ad'}}>Safe & Inclusive</h4>
+              <p className="mb-0">A nurturing environment where every child feels valued and secure.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Vision Section */}
+        <div className="mb-4 p-4 rounded-3" style={{background:'#e3f0ff'}}>
+          <h3 className="h4 fw-bold text-primary mb-2">Our Vision</h3>
+          <p className="mb-0 text-secondary">To empower students to become confident, compassionate, and responsible global citizens through innovative teaching and a caring school community.</p>
+        </div>
+
+        {/* Facilities Section */}
+        <div className="mb-4">
+          <h3 className="h4 fw-bold text-primary mb-3">Facilities</h3>
+          <div className="row g-3">
+            <div className="col-md-3 col-6">
+              <div className="bg-white border border-primary rounded-3 p-3 text-center h-100">
+                <span className="fw-bold text-primary">Smart Classrooms</span>
+              </div>
+            </div>
+            <div className="col-md-3 col-6">
+              <div className="bg-white border border-primary rounded-3 p-3 text-center h-100">
+                <span className="fw-bold text-primary">Playground & Sports</span>
+              </div>
+            </div>
+            <div className="col-md-3 col-6">
+              <div className="bg-white border border-primary rounded-3 p-3 text-center h-100">
+                <span className="fw-bold text-primary">Library & Reading Zone</span>
+              </div>
+            </div>
+            <div className="col-md-3 col-6">
+              <div className="bg-white border border-primary rounded-3 p-3 text-center h-100">
+                <span className="fw-bold text-primary">Transport Facility</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* School Activities Section */}
+        <div className="mb-4">
+          <h3 className="h4 fw-bold mb-3" style={{color:'#8e44ad'}}>School Activities</h3>
+          <div className="row g-3">
+            <div className="col-md-4">
+              <div className="rounded-3 p-3 h-100 shadow-sm" style={{background:'#eafaf1', borderLeft:'6px solid #27ae60'}}>
+                <h5 className="fw-bold mb-2" style={{color:'#27ae60'}}>Annual Sports Day</h5>
+                <p className="mb-0 text-secondary">A day full of fun, games, and healthy competition to encourage teamwork and fitness.</p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="rounded-3 p-3 h-100 shadow-sm" style={{background:'#fff6e3', borderLeft:'6px solid #f39c12'}}>
+                <h5 className="fw-bold mb-2" style={{color:'#f39c12'}}>Art & Craft Week</h5>
+                <p className="mb-0 text-secondary">Creative workshops where students express themselves through various art forms.</p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="rounded-3 p-3 h-100 shadow-sm" style={{background:'#f5e6fa', borderLeft:'6px solid #8e44ad'}}>
+                <h5 className="fw-bold mb-2" style={{color:'#8e44ad'}}>Science Exhibition</h5>
+                <p className="mb-0 text-secondary">Showcasing innovative projects and experiments by our budding scientists.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Why Choose Us */}
+        <div className="bg-primary text-white rounded-3 p-4 text-center shadow-sm">
+          <h3 className="h5 fw-bold mb-2">Why Choose Us?</h3>
+          <p className="mb-0">We are dedicated to building a strong foundation for lifelong learning. Join our school community and watch your child thrive!</p>
+        </div>
+      </div>
+    </div>
+  );
+}
