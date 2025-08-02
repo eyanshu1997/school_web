@@ -1,11 +1,10 @@
 
-import React, { useState, useEffect } from "react";
 
-const images = [
-  "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=600&q=80"
-];
+import React, { useState, useEffect, useMemo } from "react";
+
+// Dynamically import all images from src/assets/images
+const imageModules = import.meta.glob('../assets/images/*.{jpg,jpeg,png,gif,webp}', { eager: true });
+const images = Object.values(imageModules).map(mod => mod.default).filter(Boolean);
 
 function FacilitiesAccordion() {
   const [open, setOpen] = useState(null);
