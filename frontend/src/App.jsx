@@ -11,7 +11,7 @@ import FloatingContactWidget from './FloatingContactWidget';
 function App() {
   return (
     <Router>
-      <header className="shadow" style={{position:'fixed',top:0,left:0,right:0,zIndex:1050,background:'#2563eb',color:'#fff',padding:'0.5rem 0',marginBottom:0}}>
+      <header className="shadow" style={{position:'fixed',top:0,left:0,right:0,zIndex:1050,background:'#2563eb',color:'#fff',padding:'0.5rem 0',marginBottom:0, height:'64px', display:'flex', alignItems:'center'}}>
         <div className="container d-flex align-items-center gap-3 py-2">
           <img src="/logo.jpg" alt="SVS Logo" style={{height:48, width:48, objectFit:'contain', borderRadius:8, background:'#fff', padding:4}} />
           <div>
@@ -20,7 +20,7 @@ function App() {
           </div>
         </div>
       </header>
-      <nav className="navbar navbar-expand navbar-light shadow-sm" style={{position:'fixed',top:72,left:0,right:0,zIndex:1040,background:'#fff',borderBottom:'2px solid #a78bfa',marginBottom:'1.5rem'}}>
+      <nav className="navbar navbar-expand navbar-light shadow-sm" style={{position:'fixed',top:64,left:0,right:0,zIndex:1040,background:'#fff',borderBottom:'2px solid #a78bfa',marginBottom:'1.5rem', height:'56px', display:'flex', alignItems:'center'}}>
         <div className="container">
           <div className="navbar-nav gap-3">
             <Link className="nav-link fw-semibold" style={{color:'#2563eb'}} to="/">Home</Link>
@@ -29,7 +29,7 @@ function App() {
           </div>
         </div>
       </nav>
-      <div style={{paddingTop: '140px'}}>
+      <div style={{paddingTop: '120px'}}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
