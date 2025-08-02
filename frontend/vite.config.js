@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,
-   allowedHosts: ["test.svschools.in"]
+   allowedHosts: ["test.svschools.in","testschool.ashieyan.site"]
   }
 })

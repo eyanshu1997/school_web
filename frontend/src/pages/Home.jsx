@@ -8,35 +8,57 @@ const images = Object.values(imageModules).map(mod => mod.default).filter(Boolea
 
 function FacilitiesAccordion() {
   const [open, setOpen] = useState(null);
+  // New facilities content
   const facilities = [
     {
-      title: 'Smart Classrooms',
+      title: 'General Facilities',
       color: '#10b981',
       bg: '#e0f7f1',
       border: '#10b981',
-      details: 'Equipped with interactive boards, projectors, and digital content to make learning engaging and effective.'
+      details: `Our campus offers well-equipped classrooms, vibrant indoor and outdoor play areas, and specialized spaces for music and art. We prioritize safety and hygiene with CCTV surveillance, child-friendly toilets, and access to clean drinking water.`
     },
     {
-      title: 'Playground & Sports',
+      title: 'Classrooms',
       color: '#f59e42',
       bg: '#fff6e3',
       border: '#f59e42',
-      details: 'Spacious playgrounds and sports facilities for physical development, teamwork, and fun.'
+      details: `Our classrooms are bright and colorful, furnished with age-appropriate furniture and a variety of engaging learning materials to support every child's development.`
     },
     {
-      title: 'Library & Reading Zone',
+      title: 'Play Areas',
       color: '#a78bfa',
       bg: '#f3f0fa',
       border: '#a78bfa',
-      details: 'A well-stocked library and cozy reading corners to foster a love for books and independent learning.'
+      details: `We provide safe and stimulating play areas designed to encourage physical activity, exploration, and social interaction, including climbing structures, slides, and swings.`
     },
     {
-      title: 'Transport Facility',
+      title: 'Specialized Areas',
       color: '#2563eb',
       bg: '#f8fafc',
       border: '#2563eb',
-      details: 'Safe and reliable transport for students, covering major routes in the city.'
-    }
+      details: `Our school features dedicated rooms for music, art, and dance, giving students opportunities for creative expression and skill development.`
+    },
+    {
+      title: 'Safety and Security',
+      color: '#e67e22',
+      bg: '#fff6e3',
+      border: '#e67e22',
+      details: `We ensure a secure environment with CCTV cameras, fire safety equipment, and child-friendly toilets and washbasins throughout the campus.`
+    },
+    {
+      title: 'Hygiene',
+      color: '#16a085',
+      bg: '#e0f7f1',
+      border: '#16a085',
+      details: `Our facilities include clean drinking water, accessible handwashing stations, and regular pest control to maintain a healthy environment for all students.`
+    },
+    {
+      title: 'Technology Integration',
+      color: '#8e44ad',
+      bg: '#f3f0fa',
+      border: '#8e44ad',
+      details: `We integrate technology into learning with interactive whiteboards and digital tools, making lessons engaging and effective for every student.`
+    },
   ];
   return (
     <div className="row g-3">
