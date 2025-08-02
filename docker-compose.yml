@@ -2,5 +2,5 @@ services:
   frontend:
     build: ./frontend
     ports:
-      - "80:80"
+      - "9005:80"
     container_name: school_frontend
