@@ -6,8 +6,12 @@ export default function Contact() {
       <div className="rounded-4 shadow p-4 mb-5" style={{background:'#fff', border:'2px solid #10b981'}}>
         <h1 className="h2 fw-bold mb-3" style={{color:'#2563eb'}}>Contact Us</h1>
         <p className="lead mb-4" style={{color:'#22223b'}}>Visit us at SVS Playway & Primary School, Jammu or reach out for more information.</p>
+        <div className="mb-3 text-center">
+          <span className="fw-semibold" style={{color:'#2563eb', fontSize:'1.15rem'}}>Contact Number: </span>
+          <a href="tel:9419217073" style={{color:'#10b981', fontWeight:600, fontSize:'1.15rem', textDecoration:'none'}}>9419217073</a>
+        </div>
         <div className="mb-4 d-flex flex-row gap-3 justify-content-center align-items-center">
-          <a href="tel:9419170373" className="btn btn-lg d-flex align-items-center gap-2" style={{background:'#10b981', color:'#fff', border:'none'}}>
+          <a href="tel:9419217073" className="btn btn-lg d-flex align-items-center gap-2" style={{background:'#10b981', color:'#fff', border:'none'}}>
             <i className="bi bi-telephone-fill"></i>Call Now
           </a>
           <a href="https://maps.app.goo.gl/X84GEbi4Y71sFCtf6" target="_blank" rel="noopener noreferrer" className="btn btn-lg d-flex align-items-center gap-2" style={{background:'#2563eb', color:'#fff', border:'none'}}>
@@ -15,6 +19,9 @@ export default function Contact() {
           </a>
           <a href="https://www.instagram.com/saraswati_vidhyala/" target="_blank" rel="noopener noreferrer" className="btn btn-lg d-flex align-items-center gap-2" style={{background:'#fff', color:'#f59e42', border:'2px solid #f59e42'}}>
             <i className="bi bi-instagram"></i>Instagram
+          </a>
+          <a href="https://www.facebook.com/people/Svs-playway-primary-school/100054675074520/" target="_blank" rel="noopener noreferrer" className="btn btn-lg d-flex align-items-center gap-2" style={{background:'#fff', color:'#2563eb', border:'2px solid #2563eb'}}>
+            <i className="bi bi-facebook"></i>Facebook
           </a>
         </div>
         <div className="mb-4 text-center">
